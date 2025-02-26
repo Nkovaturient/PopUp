@@ -12,7 +12,7 @@ const Dash = () => {
             try {
                 const userId = localStorage.getItem('userId'); 
                 const { data } = await userApi.getDashboard(userId);
-                console.log('User data:', data);
+                // console.log('User data:', data);
                 setUserData(data.user);
             } catch (err) {
                 console.error("Failed to fetch user data:", err.message);

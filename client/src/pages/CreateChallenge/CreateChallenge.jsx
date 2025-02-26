@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { challengeApi } from '../../services/api';
 import { toast } from 'react-toastify';
+import { storeContext } from '../../context/storeContext';
 
 const CreateChallenge = () => {
+    const {navigate}=useContext(storeContext)
    
     const [formData, setFormData] = useState({
         title: '',
@@ -29,57 +31,82 @@ const CreateChallenge = () => {
     };
 
     return (
-        <div className="container mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-4">Create New Challenge</h1>
-            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded p-6">
-                <label className="block mb-4">
-                    <span className="text-gray-700">Title</span>
-                    <input
-                        type="text"
-                        name="title"
-                        className="mt-1 block w-full rounded border-gray-300"
-                        value={formData.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label className="block mb-4">
-                    <span className="text-gray-700">Description</span>
-                    <textarea
-                        name="description"
-                        className="mt-1 block w-full rounded border-gray-300"
-                        value={formData.description}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label className="block mb-4">
-                    <span className="text-gray-700">Theme</span>
-                    <input
-                        type="text"
-                        name="theme"
-                        className="mt-1 block w-full rounded border-gray-300"
-                        value={formData.theme}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label className="block mb-4">
-                    <span className="text-gray-700">Reward</span>
-                    <input
-                        type="text"
-                        name="reward"
-                        className="mt-1 block w-full rounded border-gray-300"
-                        value={formData.reward}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-                    Create Challenge
-                </button>
-                
-            </form>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-md w-full space-y-8">
+                <div>
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                        Create New Challenge
+                    </h2>
+                </div>
+                <form onSubmit={handleSubmit} className="mt-8 space-y-6 bg-white p-8 rounded-xl shadow-lg">
+                    <div className="space-y-4">
+                        <div>
+                            <label htmlFor="title" className="text-sm font-medium text-gray-700">
+                                Title
+                            </label>
+                            <input
+                                type="text"
+                                name="title"
+                                id="title"
+                                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                                value={formData.title}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="description" className="text-sm font-medium text-gray-700">
+                                Description
+                            </label>
+                            <textarea
+                                name="description"
+                                id="description"
+                                rows="4"
+                                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                                value={formData.description}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="theme" className="text-sm font-medium text-gray-700">
+                                Theme
+                            </label>
+                            <input
+                                type="text"
+                                name="theme"
+                                id="theme"
+                                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                                value={formData.theme}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="reward" className="text-sm font-medium text-gray-700">
+                                Reward
+                            </label>
+                            <input
+                                type="text"
+                                name="reward"
+                                id="reward"
+                                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                                value={formData.reward}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+                        >
+                            Create Challenge
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

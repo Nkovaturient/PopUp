@@ -12,6 +12,9 @@ import LearningNFT from "./pages/LearningNFT";
 import LoginPopup from "./pages/AuthGuard/LoginPopup";
 import ChallengeCollection from "./pages/ChallengeCollection/ChallengeCollection.jsx";
 import Dash from "./pages/Dashboard/Dash.jsx";
+import EditChallenge from "./pages/EditChallenge/EditChallenge.jsx";
+import DeleteChallenge from "./pages/DeleteChallenge/DeleteChallenge.jsx";
+import ShowChallenge from "./components/ShowChallenge.jsx";
 
 function App() {
   const [loginPopup, setLoginPopup] = useState(false);
@@ -25,7 +28,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/create-challenge" element={<CreateChallenge />} />
           <Route path="/dashboard" element={<Dash />} />
-          <Route path="/challenge/:id" element={<ChallengeCollection />} />
+          <Route path="/challenges/:id" element={<ChallengeCollection />} />
+          <Route path="/challenges/show/:id" element={<ShowChallenge />} />
+          <Route path="/challenges/edit/:id" element={<EditChallenge />} />
+          <Route path="/challenges/delete/:id" element={<DeleteChallenge />} />
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/reward-token" element={<RewardToken />} />
           <Route path="/learning-nft" element={<LearningNFT />} />

@@ -8,7 +8,7 @@ const ChallengeCard = ({ challenge }) => {
 
   const handleAuth = () => {
     if (token) {
-      navigate(`/challenge/${challenge._id}`);
+      navigate(`/challenges/show/${challenge._id}`);
     } else {
       navigate("/");
       toast.warn("Kindly login to create or view the challenges");
@@ -34,30 +34,14 @@ const ChallengeCard = ({ challenge }) => {
             <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
               {challenge.reward} <br />
             </span>
-            {challenge.creator?._id === localStorage.getItem("userId") ? (
-              <>
-                <Link
-                  to={`/challenges/${challenge._id}/edit`}
-                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
-                >
-                  Edit
-                </Link>
-                <Link
-                  to={`/challenges/${challenge._id}/delete`}
-                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
-                >
-                  Delete
-                </Link>
-              </>
-            ) : (
-              <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+              <button onClick={handleAuth} className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
                 View
               </button>
-            )}
+          
           </div>
         </div>
       </div>
-    </button>
+   </button>
   );
 };
 
