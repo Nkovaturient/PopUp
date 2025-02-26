@@ -20,7 +20,7 @@ const StoreContextProvider = (props) => {
 
   // Contract addresses
   const CONTRACT_ADDRESSES = useMemo(() => ({
-    LearningNFT: import.meta.env.VITE_LEARNING_NFT_CA,
+    LearningNFT: import.meta.env.VITE_LEARNINGNFT_CA,
     Marketplace: import.meta.env.VITE_MARKETPLACE_CA,
     RewardToken: import.meta.env.VITE_REWARDTOKEN_CA,
   }), []);

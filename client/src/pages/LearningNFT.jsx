@@ -74,7 +74,7 @@ const LearningNFT = () => {
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
         <div className="relative bg-white shadow-lg sm:rounded-3xl p-8">
-          <h1 className="text-2xl font-bold mb-4 text-gray-800">Mint Your Learning NFT</h1>
+          <h1 className="text-2xl font-bold mb-4 text-gray-800">Mint Your Achievements as NFTs</h1>
           <p className="text-sm text-gray-600 mb-4">Connected: {account}</p>
 
           {error && (
