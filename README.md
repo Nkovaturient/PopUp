@@ -1,4 +1,4 @@
-# PopUp Learning DApp ![Better than Kpop](https://img.shields.io/badge/Better-than%20Kpop-yellow)
+# PopUp Learning DApp ![Educhain](https://img.shields.io/badge/SheOnChain-Bootcamp-yellow)
 
 ![Screenshot (511)](https://github.com/user-attachments/assets/d6c8501d-76c2-4941-a19f-972553302afb)
 
